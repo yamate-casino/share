@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>From me To Toshin</title>
+</head>
+<body>
+    <input type="text"  id="event" value="" placeholder="イベント">
+    <button onclick="event_s()">イベント追加</button>
+    <input type="text"  id="urls" value="" placeholder="URL">
+    <button onclick="URL_s()">URL追加</button>
+    <div class="b1" id="b1">
+        <button onclick="load()">ロード</button>
+        <div class="b2" id="b2">
+            <h2>URL</h2>
+             <div class="b4" id="b4">
+
+             </div>
+        </div>
+        <div class="b22" id="b22">
+            <h2>EVENT</h2>
+             <div class="b44" id="b44">
+
+             </div>
+        </div>
+    </div>
+    <style>
+        .b2{
+display: inline-block;
+        }
+        .b22{
+display: inline-block;
+        }
+    </style>
+    <script>
+        var url = "https://script.google.com/macros/s/AKfycbyLgBLGUh_UX59o45BWadQ6Z1t149jcmsUcfIu5aS40bl44zZDWnwnvXl4Ph2liWXA/exec"
+        function event_s(){
+            var event = document.getElementById("event").value;
+           var data = [{
+            "branch":"event",
+            "data":event
+           }]
+           var params = {
+            "method":"post",
+            "mode":"no-cors",
+            "Content-Type":"application/json",
+            "body":JSON.stringify(data)
+           }
+           console.log(params);
+           var response = fetch(url,params);
+           console.log(response);
+        }
+        function url_s(){
+            var urls = document.getElementById("urls").value;
+           var data = [{
+            "branch":"url",
+            "data":urls
+           }]
+           var params = {
+            "method":"post",
+            "mode":"no-cors",
+            "Content-Type":"application/json",
+            "body":JSON.stringify(data)
+           }
+           console.log(params);
+           var response = fetch(url,params);
+           console.log(response);
+        }
+        function load(){
+            console.log("start");
+            fetch(url,{
+                "method":"get",
+                "mode":"cors"
+            })
+            .then(response =>{
+                if(response.ok){
+                    return response.json();
+                }
+            })
+            .then(resJson =>{
+                console.log("loaded");
+                var json = resJson;
+                console.log(json);
+                var urls = json[0].url;
+                var events = json[0].event;
+                var count1 = 0;
+                for(a of urls){
+                    count1++;
+                 var text = "<p>"+a+"</p><button onclick="+"\""+"dele("+count1+")"+"\""+">削除</button>";
+                 //var text2 = "<button onclick="+"\""+"dele("+count1+")"+"\""+">削除</button>";
+                 document.getElementById("b4").insertAdjacentHTML("beforeend",text)
+                 //document.getElementById("b5").insertAdjacentHTML("beforeend",text2)
+                }
+                var count2 = 0;
+                for(b of events){
+                    count2++;
+                 var text = "<p>"+b+"</p><button onclick="+"\""+"dele("+count2+")"+"\""+">削除</button>";
+                 //var text2 = "<button onclick="+"\""+"dele("+count2+")"+"\""+">削除</button>";
+                 document.getElementById("b44").insertAdjacentHTML("beforeend",text);
+                 //document.getElementById("b55").insertAdjacentHTML("beforeend",text2)
+                }
+            })
+            .catch(error =>{
+                console.log(error);
+            })
+        }
+        function dele(number){
+            alert(number);
+        }
+    </script>
+</body>
+</html>
