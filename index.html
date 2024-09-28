@@ -5,10 +5,21 @@
     <title>From me To Toshin</title>
 </head>
 <body>
+    <div class="top1">
+        <h1>From Me To Toshin</h1>
+        </div>
+        <div class="center1">
+            <div class="block1">
+                <p>イベントを追加する</p>
     <input type="text"  id="event" value="" placeholder="イベント">
     <button onclick="event_s()">イベント追加</button>
+    </div>
+    <div class="block2">
+        <p>URLを追加する</p>
     <input type="text"  id="urls" value="" placeholder="URL">
     <button onclick="URL_s()">URL追加</button>
+    </div>
+    </div>
     <div class="b1" id="b1">
         <button onclick="load()">ロード</button>
         <div class="b2" id="b2">
@@ -25,6 +36,22 @@
         </div>
     </div>
     <style>
+    body{
+        font-family:Arial;
+        margin :0;
+        padding:0;
+        }
+        .top1{
+            width:100vw;
+            height:7.5vh;
+            font-size:3vw;
+            text-align:left;
+        }
+        .center1{
+            width:100vw;
+            height:20vh;
+            
+            }
         .b2{
 display: inline-block;
         }
