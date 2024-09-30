@@ -19,6 +19,23 @@ body{
     letter-spacing: 0.5vw;
     font-weight: 500;
     color:white;
+    display: inline-block;
+}
+.head button{
+    position: relative;
+    top:-0.75vw;
+    left:5vw;
+margin:0;
+padding:0;
+    height:5vh;
+    width:12.5vw;
+    font-size:0.75vw;
+    line-height:5vh;
+    display: inline-block;
+    background-color: black;
+    
+    border:1px solid white;
+    color:white;
 }
 .top1{
     width:100vw;
@@ -86,16 +103,39 @@ body{
     margin-left:5vw;
     font-weight:700;
     background-color: black;
-    border:4px solid white;
+    border:2.5px solid white;
 }
 .top3{
     display: inline-block;
     width:100vw;
     height:30vh;
 }
+
+.b1{
+    position:relative;
+    left:2.5vw;
+    top:2.5vh;
+    width:95vw;
+    
+    color:white;
+}
 .b2{
+    position: absolute;
+    top:0;
+    left: 0;
+    width:42.5vw;
+    padding-left:2.5vw;
+    background-color: black;
 display: inline-block;
+
 }
 .b22{
+    position: absolute;
+    top:0;
+    right:0;
+    width:42.5vw;
+    padding-left:2.5vw;
+    background-color: black;
 display: inline-block;
+
 }
