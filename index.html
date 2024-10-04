@@ -8,7 +8,7 @@
 <body>
     <div class="head" id="head">
         <h1>From Me To Toshin</h1>
-        <button onclick="load()">ロード</button>
+        <button id="bt" onclick="load()">ロード</button>
     </div>
     <div class="top1" id="top1">
         <div class="top2" id="top2">
@@ -84,7 +84,9 @@
            var response = fetch(url,params);
            console.log(response);
         }
+        var state = "run"
         function load(){
+            ani();
             console.log("start");
             fetch(url,{
                 "method":"get",
@@ -96,6 +98,7 @@
                 }
             })
             .then(resJson =>{
+                state="ロード済み"
                 console.log("loaded");
                 var json = resJson;
                 console.log(json);
@@ -119,11 +122,31 @@
                 }
             })
             .catch(error =>{
+                state = "エラー";
                 console.log(error);
             })
         }
         function dele(number){
             alert(number);
+        }
+        var count = -1;
+        function ani(){
+            count++;
+            if(state == "run"){
+if(count == 0){
+    document.getElementById("bt").innerHTML = "ロード中.";
+    setTimeout(ani,1000)
+}else if(count == 1){
+    document.getElementById("bt").innerHTML = "ロード中..";
+    setTimeout(ani,1000)
+}else if(count == 2){
+    document.getElementById("bt").innerHTML = "ロード中...";
+    count = -1;
+    setTimeout(ani,1000);
+}
+            }else{
+                document.getElementById("bt").innerHTML = state;
+            }
         }
     </script>
 </body>
