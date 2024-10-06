@@ -107,7 +107,8 @@
                 var count1 = 0;
                 for(a of urls){
                     count1++;
-                 var text = "<p>"+a+"</p><button onclick="+"\""+"dele("+"\""+"url"+count1+"\""+")"+"\""+">削除</button>";
+                    var url_data = "url"+count1;
+                 var text = "<p>"+a+"</p><button onclick="+"\""+"dele("+url_data+")"+"\""+">削除</button>";
                  //var text2 = "<button onclick="+"\""+"dele("+"url"+count1+")"+"\""+">削除</button>";
                  document.getElementById("b4").insertAdjacentHTML("beforeend",text)
                  //document.getElementById("b5").insertAdjacentHTML("beforeend",text2)
@@ -115,7 +116,8 @@
                 var count2 = 0;
                 for(b of events){
                     count2++;
-                 var text = "<p>"+b+"</p><button onclick="+"\""+"dele("+"\""+"event"+count2+"\""+")"+"\""+">削除</button>";
+                    event_data = "event"+count2;
+                 var text = "<p>"+b+"</p><button onclick="+"\""+"dele("+event_data+")"+"\""+">削除</button>";
                  //var text2 = "<button onclick="+"\""+"dele("+"event"+count2+")"+"\""+">削除</button>";
                  document.getElementById("b44").insertAdjacentHTML("beforeend",text);
                  //document.getElementById("b55").insertAdjacentHTML("beforeend",text2)
