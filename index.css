@@ -124,7 +124,7 @@ padding:0;
  height:5vh;
  padding:0;
  margin:0;
- margin-left:17.5vw;
+ margin-left:15vw;
  color:white;
  font-weight:600;
  background-color:black;
@@ -133,7 +133,7 @@ padding:0;
 .b1 p{
     width:40vw;
     text-align:center;
-    padding-bottom:1vh;
+    padding-bottom:2.5vh;
     font-weight:600;
     border-bottom:1px solid white;
 }
@@ -147,6 +147,7 @@ padding:0;
 display: inline-block;
 
 }
+
 .b22{
     position: absolute;
     top:0;
@@ -156,4 +157,11 @@ display: inline-block;
     background-color: black;
 display: inline-block;
 
+}
+.b4{
+    width:40vw;
+}
+.b4 p{
+    text-align: left;
+    width:40vw;
 }

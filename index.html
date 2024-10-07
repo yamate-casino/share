@@ -25,7 +25,7 @@
             <p>URLを追加する</p>
             <div class="top22">
                 <p>URLを入力</p>
-            <input type="text"  id="event" value="" placeholder="ここに入力">
+            <input type="text"  id="url" value="" placeholder="ここに入力">
             <button onclick="url_s()">URL追加</button>
         </div>
         </div>
@@ -69,7 +69,7 @@
            console.log(response);
         }
         function url_s(){
-            var urls = document.getElementById("urls").value;
+            var urls = document.getElementById("url").value;
            var data = [{
             "branch":"url",
             "data":urls
@@ -107,7 +107,8 @@
                 var count1 = 0;
                 for(a of urls){
                     count1++;
-                    var url_data = "url"+count1;
+                    var url_data = "1"+count1;
+                    console.log(url_data);
                  var text = "<p>"+a+"</p><button onclick="+"\""+"dele("+url_data+")"+"\""+">削除</button>";
                  //var text2 = "<button onclick="+"\""+"dele("+"url"+count1+")"+"\""+">削除</button>";
                  document.getElementById("b4").insertAdjacentHTML("beforeend",text)
@@ -116,7 +117,8 @@
                 var count2 = 0;
                 for(b of events){
                     count2++;
-                    event_data = "event"+count2;
+                    event_data = "2"+count2;
+                    console.log(event_data);
                  var text = "<p>"+b+"</p><button onclick="+"\""+"dele("+event_data+")"+"\""+">削除</button>";
                  //var text2 = "<button onclick="+"\""+"dele("+"event"+count2+")"+"\""+">削除</button>";
                  document.getElementById("b44").insertAdjacentHTML("beforeend",text);
