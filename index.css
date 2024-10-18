@@ -138,10 +138,6 @@ padding:0;
     border-bottom:1px solid white;
 }
 .b2{
-    position: absolute;
-    top:0;
-    left: 0;
-    width:42.5vw;
     padding-left:2.5vw;
     background-color: black;
 display: inline-block;
@@ -158,6 +154,14 @@ display: inline-block;
 display: inline-block;
 
 }
+
+.block1{
+    display: block;
+}
+.block2{
+    display: none;
+}
+
 .b4{
     width:40vw;
 }

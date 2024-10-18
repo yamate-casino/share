@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <div class="block1" id="block1">
+<input type="password" id="pass" value="">
+<button ondblclick="pa()">click</button>
+    </div>
+  <div class="block2" id="block2">
     <div class="head" id="head">
         <h1>From Me To Toshin</h1>
         <button id="bt" onclick="load()">ロード</button>
@@ -31,7 +36,7 @@
         </div>
        </div>
 
-</div>
+ </div>
     <div class="b1" id="b1">
         
         <div class="b2" id="b2">
@@ -43,14 +48,21 @@
         <div class="b22" id="b22">
             <h2>予定一覧</h2>
              <div class="b44" id="b44">
-
              </div>
         </div>
     </div>
+</div>
     <style>
 
     </style>
     <script>
+        function pa(){
+            var text = document.getElementById("pass").value;
+            if(text == "hey"){
+                document.getElementById("block1").style.display = "none";
+                document.getElementById("block2").style.display = "block";
+            }
+        }
         var url = "https://script.google.com/macros/s/AKfycbyLgBLGUh_UX59o45BWadQ6Z1t149jcmsUcfIu5aS40bl44zZDWnwnvXl4Ph2liWXA/exec"
         function event_s(){
             var event = document.getElementById("event").value;
