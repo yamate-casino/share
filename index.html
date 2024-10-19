@@ -34,9 +34,7 @@
             <button onclick="url_s()">URL追加</button>
         </div>
         </div>
-       </div>
-
- </div>
+      </div>
     <div class="b1" id="b1">
         
         <div class="b2" id="b2">
@@ -60,7 +58,9 @@
             var text = document.getElementById("pass").value;
             if(text == "hey"){
                 document.getElementById("block1").style.display = "none";
+                document.getElementById("block1").style.opacity = 0;
                 document.getElementById("block2").style.display = "block";
+                document.getElementById("block2").style.opacity = 1;
             }
         }
         var url = "https://script.google.com/macros/s/AKfycbyLgBLGUh_UX59o45BWadQ6Z1t149jcmsUcfIu5aS40bl44zZDWnwnvXl4Ph2liWXA/exec"
